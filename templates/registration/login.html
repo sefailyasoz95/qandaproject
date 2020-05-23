@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="container">
+        <div class="col-md-8 mt-3 d-inline-block row align-items-center">
+            <form action="" method="post" novalidate class="border">
+                <div class="form-group p-5 col">
+                    <div class="card bg-dark text-white mb-3 mt-3">
+                        {% if messages %}
+						{% for message in messages %}
+							<div class="alert alert-{{message.tags}}" role="alert">
+								{{ message }}
+							</div>
+						{% endfor %}
+					    {% endif %}
+                        <div class="card-header border-bottom">
+                            Anonymous
+                            <small class="float-right">
+                                Likes: 1161
+                            </small>
+                        </div>
+                        <div class="card-body form-group">
+                            <p class="card-text">
+                                {% csrf_token %}
+                                {{ form.as_p }}
+                            </p>
+                            <p class="card-text">
+                                <small class="float-right">
+                                <button type="submit" class="btn btn-light" id="like">
+                                    Login <i class="fas fa-thumbs-up"></i>
+                                </button>
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="align-top d-inline-block col-md-4 mb-5">
+            <div class="mb-3 mt-3">
+                <div class="card mt-2 text-center">
+                    <div class="card-header">
+                        How does Q-AND-A work ?
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Everyone can ask a question, you do <b>not</b> need an account!
+                        </p>
+                        <p class="card-text">
+                            If you want to let your friends or followers ask you questions Anonymously or with a nickname
+                            create an account which is <b>FREE</b> ! And then
+                            <ul>
+                                <li>
+                                    Create a Question Page
+                                </li>
+                                <li>
+                                    Copy the page link that we provide you
+                                </li>
+                                <li>
+                                    Send it to your friends and followers
+                                </li>
+                                <li>
+                                    And now wait for the questions!
+                                </li>
+                            </ul>
+                            You can order them by the number of likes or the date that they have been added.
+                        </p>
+                        <p class="card-text">
+                            You can also choose a date to automatically delete the question page
+                        </p>
+                        <a class="btn btn-outline-dark" href="#">Sign In</a>
+                        <a class="btn btn-outline-dark" href="#">Sign Up</a>
+                    </div>
+                </div>
+                <div class="modal" id="loginModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Ask A Question</h5>
+                                <button class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="username" >Username</label>
+                                        <input type="text" class="form-control" id="username">
+                                        <label for="question" >Question</label>
+                                        <textarea name="question"  class="form-control" id="question" cols="30" rows="10"></textarea>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-dark btn-block" id="send">Yolla</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var cardBody = document.getElementsByClassName("card-body").item(0)
+        console.log(cardBody.childNodes[2]);
+        var usernameInput = cardBody.childNodes[2].childNodes[2];
+        usernameInput.className = "form-control";
+        var passwordInput = cardBody.childNodes[4].childNodes[2];
+        passwordInput.className = "form-control";
+    </script>
+{% endblock %}

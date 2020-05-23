@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="container mb-5">
+        <div class="d-inline-block col-md-7">
+            <div class="card bg-dark text-white mb-3 mt-3">
+                <div class="card-header border-bottom">
+                    Anonymous
+                    <small class="float-right">
+                        Likes: 1291
+                    </small>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">My question is what is the most interesting thing happened in your life lately?</p>
+                    <p class="card-text">
+                        <small class="text-muted float-left"> 21 May 2020</small>
+                        <small class="float-right">
+                                <button class="btn btn-light" id="like">
+                                    <i class="fas fa-thumbs-up"></i>
+                                </button>
+                        </small>
+                    </p>
+                </div>
+            </div>
+            <div class="card bg-dark text-white mb-3 mt-3">
+                <div class="card-header border-bottom">
+                    aBigFanOfYours!
+                    <small class="float-right">
+                        Likes: 1275
+                    </small>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Not a real question but i really like your content! Thank you so much!</p>
+                    <p class="card-text">
+                        <small class="text-muted float-left"> 21 May 2020</small>
+                        <small class="float-right">
+                                <button class="btn btn-light" id="like">
+                                    <i class="fas fa-thumbs-up"></i>
+                                </button>
+                        </small>
+                    </p>
+                </div>
+            </div>
+            <div class="card bg-dark text-white mb-3 mt-3">
+                <div class="card-header border-bottom">
+                    Mike
+                    <small class="float-right">
+                        Likes: 1274
+                    </small>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">What do you think about Corona Virus ?</p>
+                    <p class="card-text">
+                        <small class="text-muted float-left"> 21 May 2020</small>
+                        <small class="float-right">
+                                <button class="btn btn-light" id="like">
+                                    <i class="fas fa-thumbs-up"></i>
+                                </button>
+                        </small>
+                    </p>
+                </div>
+            </div>
+            <div class="card bg-dark text-white mb-3 mt-3">
+                <div class="card-header border-bottom">
+                    Anonymous
+                    <small class="float-right">
+                        Likes: 1161
+                    </small>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Does your relationship effect your work in daily basis ?</p>
+                    <p class="card-text">
+                        <small class="text-muted float-left"> 21 May 2020</small>
+                        <small class="float-right">
+                                <button class="btn btn-light" id="like">
+                                    <i class="fas fa-thumbs-up"></i>
+                                </button>
+                        </small>
+                    </p>
+                </div>
+            </div>
+            <div class="card bg-dark text-white mb-3 mt-3">
+                <div class="card-header border-bottom">
+                    Anonymous
+                    <small class="float-right">
+                        Likes: 1035
+                    </small>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">What is your best habbit ?</p>
+                    <p class="card-text">
+                        <small class="text-muted float-left"> 21 May 2020</small>
+                        <small class="float-right">
+                                <button class="btn btn-light" id="like">
+                                    <i class="fas fa-thumbs-up"></i>
+                                </button>
+                        </small>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="align-top d-inline-block ml-5 col-md-4">
+            <div class="mb-3 mt-3">
+                <button class="btn btn-outline-dark mt-3 btn-block mb-2" data-toggle="modal" data-target="#loginModal">Ask A Question</button>
+                <button class="btn btn-outline-dark btn-block">
+                    <small>
+                        You only have 1 question. If you ask second, first one will be deleted.
+                    </small>
+                </button>
+                <div class="card mt-2 text-center">
+                    <div class="card-header">
+                        How does Q-AND-A work ?
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Everyone can ask a question, you do <b>not</b> need an account!
+                        </p>
+                        <p class="card-text">
+                            If you want to let your friends or followers ask you questions Anonymously or with a nickname
+                            create an account which is <b>FREE</b> ! And then
+                            <ul>
+                                <li>
+                                    Create a Question Page
+                                </li>
+                                <li>
+                                    Copy the page link that we provide you
+                                </li>
+                                <li>
+                                    Send it to your friends and followers
+                                </li>
+                                <li>
+                                    And now wait for the questions!
+                                </li>
+                            </ul>
+                            You can order them by the number of likes or the date that they have been added.
+                        </p>
+                        <p class="card-text">
+                            You can also choose a date to automatically delete the question page
+                        </p>
+                        <a class="btn btn-outline-dark" href="#">Sign In</a>
+                        <a class="btn btn-outline-dark" href="#">Sign Up</a>
+                    </div>
+                </div>
+                <div class="modal" id="loginModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Ask A Question</h5>
+                                <button class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="username" >Username</label>
+                                        <input type="text" class="form-control" id="username">
+                                        <label for="question" >Question</label>
+                                        <textarea name="question"  class="form-control" id="question" cols="30" rows="10"></textarea>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-dark btn-block" id="send">Send it !</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    var send = document.getElementById("send");
+    send.addEventListener("click", dontRefresh);
+    function dontRefresh(e) {
+        e.preventDefault();
+    }
+</script>
+{% endblock %}

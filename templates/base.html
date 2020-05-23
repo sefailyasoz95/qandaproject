@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/8534299474.js" crossorigin="anonymous"></script>
+    <title>Q&A Project</title>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-3">
+        <div class="container">
+            <a class="navbar-brand" href="/">Q-AND-A</a>
+            <ul class="navbar-nav">
+                <li>
+                    {% if user.is_authenticated %}
+                        <a href="/user/profile" class="btn btn-outline-light">{{ user.username }}</a>
+                        <a href="{% url 'logout' %}" class="btn btn-outline-light"> Logout </a>
+                    {% else %}
+                        <a href="{% url 'login' %}" class="btn btn-outline-light">Sign In</a>
+                        <a href="/account/signup" class="btn btn-outline-light">Sign Up</a>
+                    {% endif %}
+                </li>
+            <!--
+                <div class="btn-group">
+                    <button class="ml-2 btn btn-outline-light dropdown-toggle" type="button" data-toggle="dropdown">
+                        <span>Links</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" target="_blank" href="{{ setting.github }}">
+                            <i class="fa fa-github"></i> GitHub
+                        </a>
+                        <a class="dropdown-item" target="_blank" href="{{ setting.linkedin }}">
+                            <i class="fa fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a class="dropdown-item" target="_blank" href="{{ setting.stackoverflow }}">
+                            <i class="fa fa-stack-overflow"></i> Stack Overflow
+                        </a>
+                        <a class="dropdown-item" target="_blank" href="{{ setting.instagram }}">
+                            <i class="fa fa-instagram"></i> Instagram
+                        </a>
+                        <a class="dropdown-item" target="_blank" href="{{ setting.twitter }}">
+                            <i class="fa fa-twitter"></i> Twitter
+                        </a>
+                    </div>
+                </div> -->
+            </ul>
+        </div>
+    </nav>
+{% block body %}
+
+{% endblock %}
+
+<div class="footer mt-5">
+    <nav class="navbar-expand bg-dark p-5 navbar text-white">
+        <div class="col-md-4">
+            <div class="col-md-6" style="margin: auto">
+                    <button class="btn btn-dark d-block mb-2 font-weight-bold" data-toggle="collapse" data-target="#collapse-btn-1">Links</button>
+                    <div class="collapse" id="collapse-btn-1">
+                        <div class="card">
+                            <div class="card-body">
+                                <a class="list-group-item list-group-item-action list-group-item-dark" href="#">My Projects</a>
+                                <a class="list-group-item list-group-item-action list-group-item-dark" href="#">My Blogs</a>
+                                <a class="list-group-item list-group-item-action list-group-item-dark" href="#">About Me</a>
+                                <a class="list-group-item list-group-item-action list-group-item-dark" href="/contact">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            Copyright &copy; QANDA 2020
+        </div>
+        <div class="col-md-4">
+           <div class="col-md-7" style="margin-left: auto">
+                    <button class="btn btn-dark d-block mb-2 font-weight-bold" data-toggle="collapse" data-target="#collapse-btn-2">Social Media</button>
+                    <div class="collapse" id="collapse-btn-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <a class="list-group-item list-group-item-action list-group-item-dark" href="{{ settings.github }}">
+                                    <i class="fab fa-github"> </i> Github
+                                </a>
+                                <a class="list-group-item list-group-item-action list-group-item-dark" href="{{ settings.kariyer }}">
+                                    <i class="fab fa-linkedin"> </i> LinkedIn
+                                </a>
+                                <a class="list-group-item list-group-item-action list-group-item-dark" href="{{ settings.twitter }}">
+                                    <i class="fab fa-twitter"> </i> Twitter
+                                </a>
+                                <a class="list-group-item list-group-item-action list-group-item-dark" href="{{ settings.instagram }}">
+                                    <i class="fab fa-instagram-square"></i> Instagram
+                                </a>
+                                 <a class="list-group-item list-group-item-action list-group-item-dark" href="{{ settings.youtube }}">
+                                    <i class="fab fa-youtube"></i> YouTube
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+</body>
+</html>
